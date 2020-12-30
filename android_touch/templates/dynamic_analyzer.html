@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<HEAD>
+    <meta charset="utf-8">
+    <title>android_touch</title>
+    <script src="../static/touch_screen/codemirror/codemirror.js"></script>
+    <script src="../static/touch_screen/codemirror/javascript.js"></script>
+    <script src="../static/touch_screen/codemirror/jshint.js"></script>
+    <script src="../static/touch_screen/codemirror/lint.js"></script>
+    <script src="../static/touch_screen/codemirror/javascript-lint.js"></script>
+    <script src="../static/touch_screen/jquery-1.8.0.js"></script>
+</HEAD>
+<body>
+    <img id="screen_shot" src="../static/images/screenshot/stream.png"  />
+</body>
+
+
+
+
+<script>
+
+    $( document ).ready(function() {
+        var pic_raw_width = screen_shot.width;
+        var pic_raw_height = screen_shot.height;
+
+        function Scale() {
+            var window_width = 320;
+            var window_height = 580;
+            var picture_width = screen_shot.width;
+            var picture_height = screen_shot.height;
+            if (picture_height < window_height && picture_width < window_width) {
+                console.log('pass')
+            }
+            else {
+                var height_rate = window_height / picture_height;
+                var width_rate = window_width / picture_width;
+                if (height_rate > width_rate) {
+                    var rate = width_rate;
+                }
+                else {
+                    var rate = height_rate;
+                }
+                screen_shot.width = rate * picture_width;
+                screen_shot.height = rate * picture_height;
+                console.log(screen_shot.width + ';' + screen_shot.height)
+            }
+            console.log('scale!');
+        }
+        Scale();
+
+        //For All Ajax
+        function action(url, data, on_success){
+          //Add CSRF
+          {#data.csrfmiddlewaretoken ='{{ csrf_token }}';#}
+          $.ajax({
+            url : url,
+            type : "GET",
+            dataType: "json",
+            data : data,
+            success : function(json){ on_success(json) },
+            error : function(xhr, ajaxOptions, thrownError) {
+              // document.getElementById("er").srcdoc = xhr.responseText;
+                console.log(xhr.responseText)
+            }
+          });
+        }
+
+        $('#screen_shot').click(function(e) {
+            // var res=[$('#screen_width').val(),$('#screen_height').val()];
+            var width = pic_raw_width;
+            var height = pic_raw_height;
+            width = parseInt(width);
+            height = parseInt(height);
+            var offset = $(this).offset();
+            var x = e.pageX - offset.left;
+            var y = e.pageY - offset.top;
+            console.log('X Axis1: '+ x + " Y Axis1: "+ y + "width: " + width + "height: " + height);
+            x = x * (width/320);
+            y = y * (height/580);
+            console.log('X Axis: '+ x + " Y Axis: "+ y);
+            action(document.location.origin + '/touch_screen/', {x: x, y: y}, function(json) {
+                    console.log('成功');
+                    // $('#screen_shot')[0].src = "../static/images/screenshot/stream.png";
+                    var url = document.getElementById("screen_shot").src;
+                    var loc = url.indexOf('?');
+                    if (loc > -1) {
+                        url = url.substring(0, loc);
+                    }
+                    console.log('url: ' + url);
+                    document.getElementById("screen_shot").src = url + "?" + new Date().getTime();
+                    //if (json.status==='ok')
+                    //  console.log('Clicked!');
+                    //else
+                    //  console.log(json.message)
+                  });
+    });
+    });
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
