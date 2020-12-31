@@ -68,3 +68,8 @@ def home(request,):
     time.sleep(0.5)
     adb_conn.screen_stream()
     return HttpResponse(json.dumps({'a': 'a'}), content_type='application/json')
+
+
+def refresh(request,):
+    adb_conn.screen_stream()
+    return HttpResponse(json.dumps({'a': 'a'}), content_type='application/json')

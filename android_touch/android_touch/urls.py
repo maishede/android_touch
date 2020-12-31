@@ -23,7 +23,8 @@ urlpatterns = [
     path(r'show_screen/', views.show_screen, name='show_screen'),
     path(r'touch_screen/', views.touch_screen, name='touch_screen'),
     path(r'slide/', views.slide, name='slide'),
-    path(r'home/', views.home, name='home')
+    path(r'home/', views.home, name='home'),
+    path(r'refresh/', views.refresh, name='refresh'),
 ]
 
 from touch_screen.helpers import adb_conn

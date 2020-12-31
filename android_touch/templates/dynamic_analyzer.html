@@ -16,6 +16,7 @@
     <button type="button" id="left_slide">左滑</button>
     <button type="button" id="home">桌面</button>
     <button type="button" id="right_slide">右滑</button>
+    <button type="button" id="refresh">刷新</button>
 </body>
 
 
@@ -102,7 +103,10 @@
 
         $('#home').click(function () {
             Home();
-        })
+        });
+        $('#refresh').click(function () {
+            Refresh();
+        });
         function Slide(direction) {
             action(document.location.origin + '/slide', {'direction': direction}, function (json) {
                 console.log('滑动成功');
@@ -120,6 +124,18 @@
         function Home() {
             action(document.location.origin + '/home', {}, function (json) {
                 console.log('返回主页成功');
+                var url = document.getElementById("screen_shot").src;
+                var loc = url.indexOf('?');
+                if (loc > -1) {
+                    url = url.substring(0, loc);
+                }
+                console.log('url: ' + url);
+                document.getElementById("screen_shot").src = url + "?" + new Date().getTime();
+            })
+        }
+        function Refresh() {
+            action(document.location.origin + '/refresh', {}, function (json) {
+                console.log('刷新成功');
                 var url = document.getElementById("screen_shot").src;
                 var loc = url.indexOf('?');
                 if (loc > -1) {
