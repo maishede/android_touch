@@ -12,6 +12,10 @@
 </HEAD>
 <body>
     <img id="screen_shot" src="../static/images/screenshot/stream.png"  />
+    <br>
+    <button type="button" id="left_slide">左滑</button>
+    <button type="button" id="home">桌面</button>
+    <button type="button" id="right_slide">右滑</button>
 </body>
 
 
@@ -51,7 +55,7 @@
         //For All Ajax
         function action(url, data, on_success){
           //Add CSRF
-          {#data.csrfmiddlewaretoken ='{{ csrf_token }}';#}
+          // {#data.csrfmiddlewaretoken ='{{ csrf_token }}';#}
           $.ajax({
             url : url,
             type : "GET",
@@ -80,7 +84,6 @@
             console.log('X Axis: '+ x + " Y Axis: "+ y);
             action(document.location.origin + '/touch_screen/', {x: x, y: y}, function(json) {
                     console.log('成功');
-                    // $('#screen_shot')[0].src = "../static/images/screenshot/stream.png";
                     var url = document.getElementById("screen_shot").src;
                     var loc = url.indexOf('?');
                     if (loc > -1) {
@@ -88,12 +91,44 @@
                     }
                     console.log('url: ' + url);
                     document.getElementById("screen_shot").src = url + "?" + new Date().getTime();
-                    //if (json.status==='ok')
-                    //  console.log('Clicked!');
-                    //else
-                    //  console.log(json.message)
                   });
-    });
+            });
+        $('#left_slide').click(function () {
+            Slide('left');
+        });
+        $('#right_slide').click(function () {
+            Slide('right')
+        });
+
+        $('#home').click(function () {
+            Home();
+        })
+        function Slide(direction) {
+            action(document.location.origin + '/slide', {'direction': direction}, function (json) {
+                console.log('滑动成功');
+                var url = document.getElementById("screen_shot").src;
+                var loc = url.indexOf('?');
+                if (loc > -1) {
+                    url = url.substring(0, loc);
+                }
+                console.log('url: ' + url);
+                document.getElementById("screen_shot").src = url + "?" + new Date().getTime();
+
+            })
+        }
+
+        function Home() {
+            action(document.location.origin + '/home', {}, function (json) {
+                console.log('返回主页成功');
+                var url = document.getElementById("screen_shot").src;
+                var loc = url.indexOf('?');
+                if (loc > -1) {
+                    url = url.substring(0, loc);
+                }
+                console.log('url: ' + url);
+                document.getElementById("screen_shot").src = url + "?" + new Date().getTime();
+            })
+        }
     });
 
 

@@ -4,6 +4,7 @@ import psutil
 import platform
 import logging
 import subprocess
+from PIL import Image
 from django.conf import settings
 from concurrent.futures import ThreadPoolExecutor
 
@@ -79,6 +80,7 @@ class AdbClient(object):
             args += ['shell']
         args += cmd_list
         try:
+            print(args)
             result = subprocess.check_output(
                 args,
                 stderr=subprocess.STDOUT)
@@ -102,5 +104,28 @@ class AdbClient(object):
         with ThreadPoolExecutor(2) as exector:
             cmd_list = ['input', 'tap', x, y]
             exector.submit(self.adb_command, cmd_list, True)
+
+    def slide(self, direction):
+        x1 = 0
+        y1 = 500
+        x2 = 500
+        y2 = 500
+        im = Image.open(self.screenshot_path)
+        max_width, max_height = im.size
+        max_width -= 2
+        max_height -= 2
+        if direction == 'left':
+            x1, y1, x2, y2 = str(max_width), str(max_height / 2), '0', str(max_height / 2)
+        elif direction == 'right':
+            x1, y1, x2, y2 = '0', str(max_height / 2), str(max_width), str(max_height / 2)
+        x1 = str(x1)
+        x2 = str(x2)
+        y1 = str(y1)
+        y2 = str(y2)
+        self.adb_command(['input', 'swipe', x1, y1, x2, y2], True)
+
+    def home(self):
+        self.adb_command(['input', 'keyevent', '3'], True)
+
 
 adb_conn = AdbClient()

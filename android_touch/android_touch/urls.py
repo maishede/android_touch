@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import time
 from django.contrib import admin
 from django.urls import path
 from touch_screen import views
@@ -21,9 +22,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'show_screen/', views.show_screen, name='show_screen'),
     path(r'touch_screen/', views.touch_screen, name='touch_screen'),
+    path(r'slide/', views.slide, name='slide'),
+    path(r'home/', views.home, name='home')
 ]
 
 from touch_screen.helpers import adb_conn
 
 
+adb_conn.home()
+adb_conn.home()
+time.sleep(0.5)
 adb_conn.screen_stream()

@@ -17,17 +17,15 @@
       <file leaf-file-name="helpers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/touch_screen/helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="105" column="21" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
+            <state relative-caret-position="990">
+              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
               <folding>
+                <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#384#467#0" />
                 <element signature="e#506#819#0" />
                 <element signature="e#1435#1596#0" />
                 <element signature="e#1514#1576#0" />
-                <element signature="e#1670#2163#0" />
                 <element signature="e#1677#1744#0" />
-                <element signature="e#1843#1966#0" />
-                <element signature="e#2005#2163#0" />
               </folding>
             </state>
           </provider>
@@ -36,8 +34,12 @@
       <file leaf-file-name="dynamic_analyzer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/dynamic_analyzer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+            <state relative-caret-position="330">
+              <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+              <folding>
+                <element signature="e#957#1860#0#HTML" />
+                <element signature="e#1948#2434#0#HTML" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,8 +47,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android_touch/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
-              <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
+            <state relative-caret-position="405">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -54,8 +56,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/touch_screen/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="665">
+              <caret line="57" column="84" selection-start-line="57" selection-start-column="84" selection-end-line="57" selection-end-column="84" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -75,10 +77,10 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android_touch/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            <state relative-caret-position="495">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding>
-                <element signature="e#637#669#0" expanded="true" />
+                <element signature="e#637#648#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,6 +117,7 @@
       <find>template</find>
       <find>mages/screenshot/strea</find>
       <find>static</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -124,10 +127,10 @@
         <option value="$PROJECT_DIR$/touch_screen/templates/touch_screen/dynamic_analyzer.html" />
         <option value="$PROJECT_DIR$/static/touch_screen/dynamic_analyzer.html" />
         <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/android_touch/settings.py" />
-        <option value="$PROJECT_DIR$/templates/dynamic_analyzer.html" />
         <option value="$PROJECT_DIR$/touch_screen/helpers.py" />
+        <option value="$PROJECT_DIR$/templates/dynamic_analyzer.html" />
         <option value="$PROJECT_DIR$/touch_screen/views.py" />
+        <option value="$PROJECT_DIR$/android_touch/settings.py" />
         <option value="$PROJECT_DIR$/android_touch/urls.py" />
       </list>
     </option>
@@ -141,7 +144,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="4" />
     <option name="y" value="24" />
-    <option name="width" value="982" />
+    <option name="width" value="1063" />
     <option name="height" value="976" />
   </component>
   <component name="ProjectView">
@@ -264,7 +267,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="24" width="982" height="976" extended-state="0" />
+    <frame x="4" y="24" width="1063" height="976" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -275,7 +278,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="right" id="leetcode" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27846792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25692454" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -303,14 +306,12 @@
         <state relative-caret-position="1170">
           <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
           <folding>
+            <element signature="e#0#9#0" expanded="true" />
             <element signature="e#384#467#0" />
             <element signature="e#506#819#0" />
             <element signature="e#1435#1596#0" />
             <element signature="e#1514#1576#0" />
-            <element signature="e#1670#2163#0" />
             <element signature="e#1677#1744#0" />
-            <element signature="e#1843#1966#0" />
-            <element signature="e#2005#2163#0" />
           </folding>
         </state>
       </provider>
@@ -393,49 +394,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/dynamic_analyzer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="330">
+          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+          <folding>
+            <element signature="e#957#1860#0#HTML" />
+            <element signature="e#1948#2434#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/touch_screen/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="105" column="21" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
+        <state relative-caret-position="990">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
           <folding>
+            <element signature="e#0#9#0" expanded="true" />
             <element signature="e#384#467#0" />
             <element signature="e#506#819#0" />
             <element signature="e#1435#1596#0" />
             <element signature="e#1514#1576#0" />
-            <element signature="e#1670#2163#0" />
             <element signature="e#1677#1744#0" />
-            <element signature="e#1843#1966#0" />
-            <element signature="e#2005#2163#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android_touch/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
+        <state relative-caret-position="405">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android_touch/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        <state relative-caret-position="495">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding>
-            <element signature="e#637#669#0" expanded="true" />
+            <element signature="e#637#648#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/touch_screen/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="665">
+          <caret line="57" column="84" selection-start-line="57" selection-start-column="84" selection-end-line="57" selection-end-column="84" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
